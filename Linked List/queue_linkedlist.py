@@ -1,30 +1,12 @@
 # Implemented using Doubly Linked List
-class Node:
-    def __init(self, value=None, prev = None, next=None):
+class Node(object):
+    def __init__(self, value, prev, next):
         self.value = value
-        self.prev = None
-        self.next = None
-
-    def get_value(self):
-        return self.value
-
-    def get_prev(self):
-        return self.prev
-
-    def get_next(self):
-        return self.next
-
-    def set_value(self, data):
-        self.value = data
-
-    def set_prev(self, data):
-        self.prev = data
-
-    def set_next(self, new_next):
-        self.next = new_next
+        self.prev = prev
+        self.next = next
 
 
-class LinkedList:
+class LinkedList(object):
     def __init__(self):
         self.head = None
         self.tail = None
@@ -32,21 +14,35 @@ class LinkedList:
     # Enqueue from head
     def enqueue(self, data):
         new_node = Node(data,None,None)
-        # If list is empty, replace with is_empty
-        if self.head == None
+        if self.head == None:
             self.head = self.tail = new_node
-        new_node.set_next(self.head)
-        self.head.prev = new_node
-        self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
 
     # Dequeue from tail
-    #def dequeue(self):
+    def dequeue(self):
+        self.tail = self.tail.prev
+        self.tail.next = None
 
-    #def is_empty(self):
-
+    def show(self):
+        current = self.head
+        while current is not None:
+            print current.value
+            current = current.next
+        print ''
 
 def main():
     list = LinkedList()
+    list.enqueue(1)
+    list.enqueue(2)
+    list.enqueue(3)
+    list.show()
+    list.dequeue()
+    list.show()
+    list.dequeue()
+    list.show()
 
 if __name__ == '__main__':
     main()
