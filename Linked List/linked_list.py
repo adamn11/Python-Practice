@@ -13,6 +13,20 @@ class SinglyLinkedList(object):
         node.next = self.head
         self.head = node
 
+    def add(self,data,index):
+        current = self.head
+        previous = None
+        counter = 0
+
+        while counter < index:
+            previous = current
+            current = current.next
+            counter += 1
+
+        node = Node(data,None)
+        node.next = current
+        previous.next = node
+
     def delete(self, data):
         current = self.head
         previous = None
@@ -48,6 +62,10 @@ def main():
     list.add_front(2)
     list.add_front(3)
 
+    list.show_list()
+    list.get_size()
+
+    list.add(0,3)
     list.show_list()
     list.get_size()
 
