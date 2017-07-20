@@ -6,19 +6,19 @@ def binary_search(array, target):
         mid = min + (max - min) / 2
 
         if array[mid] == target:
-            print "Found %s" % target
-            break
+            return mid
         elif array[mid] > target:
-            print "Nope"
             max = mid - 1
         elif array[mid] < target:
-            print "Nope"
             min = target + 1
 
 def main():
-    array = [0, 1, 2, 3, 4]
-    target = 0
-    binary_search(array, target)
+    # TODO write case where target is not found
+    array = [0, 14, 22, 54, 87]
+    target = 2
+    key = binary_search(array, target)
+
+    print "Target %d is located at Index %d" % (target, key)
 
 if __name__ == '__main__':
     main()
