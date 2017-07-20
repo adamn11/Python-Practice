@@ -1,28 +1,32 @@
-def binary_serach(key,array,min,max):
-    if min > max:
-        return False
-    else:
-        midpoint = find_midpoint(array,min,max)
+def binary_search(array, target):
+    min = 0
+    max = len(array)
 
-    if array[midpoint] < key:
-        binary_serach(key,array,array[midpoint+1],max)
-    elif array[midpoint] > key:
-        binary_serach(key,array,min,array[midpoint-1])
-    else:
-        return True
+    while max > min:
+        mid = min + (max - min) / 2
 
-def find_midpoint(array,min,max):
-    midpoint = (array.index(max) - array.index(min)) / 2
-    return array.index(min) + midpoint
-
+        if array[mid] == target:
+            print "Found %s" % target
+            break
+        elif array[mid] > target:
+            print "Nope"
+            max = mid - 1
+        elif array[mid] < target:
+            print "Nope"
+            min = target + 1
 
 def main():
-    array = [0,1,2,3,5,8,14,29,64,99,192,208,344]
-
-    if binary_serach(5,array,0,344):
-        print 'Yas'
-    else:
-        print 'Nah'
+    array = [0, 1, 2, 3, 4]
+    target = 0
+    binary_search(array, target)
 
 if __name__ == '__main__':
     main()
+
+
+
+
+
+
+
+
