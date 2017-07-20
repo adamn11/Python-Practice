@@ -13,6 +13,20 @@ class SinglyLinkedList(object):
         node.next = self.head
         self.head = node
 
+    def add(self, data, index):
+        current = self.head
+        previous = None
+        counter = 0
+
+        while counter < index:
+            previous = current
+            current = current.next
+            counter += 1
+
+        node = Node(data, None)
+        node.next = current
+        previous.next = node
+
     def delete(self, data):
         current = self.head
         previous = None
@@ -23,7 +37,7 @@ class SinglyLinkedList(object):
             else:
                 previous = current
                 current = current.next
-        if previous == None:
+        if previous is None:
             self.head = current.next
         else:
             previous.next = current.next
@@ -34,13 +48,14 @@ class SinglyLinkedList(object):
         while current is not None:
             count += 1
             current = current.next
-        print "Size of list is: " + str(count)
+        print("Size of list is: " + str(count))
 
     def show_list(self):
         current = self.head
         while current is not None:
-            print current.value
+            print(current.value)
             current = current.next
+
 
 def main():
     list = SinglyLinkedList()
@@ -51,8 +66,13 @@ def main():
     list.show_list()
     list.get_size()
 
+    list.add(0, 3)
+    list.show_list()
+    list.get_size()
+
     list.delete(2)
     list.show_list()
+
 
 if __name__ == '__main__':
     main()
