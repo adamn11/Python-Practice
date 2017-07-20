@@ -9,11 +9,12 @@ def binary_search(array, target):
             return mid
         elif array[mid] > target:
             max = mid - 1
-        elif array[mid] < target:
+        elif array[mid] < target:f
             min = target + 1
 
 def main():
     # TODO write case where target is not found
+    # TEST
     array = [0, 14, 22, 54, 87]
     target = 2
     key = binary_search(array, target)
@@ -22,11 +23,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
