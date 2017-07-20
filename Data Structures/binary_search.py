@@ -12,13 +12,15 @@ def binary_search(array, target):
         elif array[mid] < target:
             min = target + 1
 
+
 def main():
     # TODO write case where target is not found
     array = [0, 14, 22, 54, 87]
     target = 2
     key = binary_search(array, target)
 
-    print "Target %d is located at Index %d" % (target, key)
+    print("Target %d is located at Index %d" % (target, key))
+
 
 if __name__ == '__main__':
     main()
