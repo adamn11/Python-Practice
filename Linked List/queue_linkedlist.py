@@ -13,8 +13,8 @@ class LinkedList(object):
 
     # Enqueue from head
     def enqueue(self, data):
-        new_node = Node(data,None,None)
-        if self.head == None:
+        new_node = Node(data, None, None)
+        if self.head is None:
             self.head = self.tail = new_node
         else:
             new_node.next = self.head
@@ -29,9 +29,10 @@ class LinkedList(object):
     def show(self):
         current = self.head
         while current is not None:
-            print current.value
+            print(current.value)
             current = current.next
-        print ''
+        print('')
+
 
 def main():
     list = LinkedList()
@@ -43,6 +44,7 @@ def main():
     list.show()
     list.dequeue()
     list.show()
+
 
 if __name__ == '__main__':
     main()
