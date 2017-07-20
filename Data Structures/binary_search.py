@@ -9,7 +9,7 @@ def binary_search(array, target):
             return mid
         elif array[mid] > target:
             max = mid - 1
-        elif array[mid] < target:f
+        elif array[mid] < target:
             min = target + 1
 
 def main():
