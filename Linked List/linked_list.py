@@ -1,7 +1,7 @@
 class Node(object):
-    def __init__(self, value, next):
+    def __init__(self, value):
         self.value = value
-        self.next = next
+        self.next = None
 
 
 class SinglyLinkedList(object):
@@ -9,10 +9,22 @@ class SinglyLinkedList(object):
         self.head = None
 
     def add_front(self, data):
-        node = Node(data, None)
+        node = Node(data)
         node.next = self.head
         self.head = node
 
+    def add_back(self, data):
+        current = self.head
+        previous = None
+
+        while current:
+            previous = current
+            current = current.next
+
+        node = Node(data)
+        previous.next = node
+
+    # Catch if index[0]
     def add(self, data, index):
         current = self.head
         previous = None
@@ -23,24 +35,25 @@ class SinglyLinkedList(object):
             current = current.next
             counter += 1
 
-        node = Node(data, None)
+        node = Node(data)
         node.next = current
         previous.next = node
 
     def delete(self, data):
         current = self.head
         previous = None
-        found = False
-        while current is not None and found is False:
+
+        while current:
             if current.value == data:
-                found = True
-            else:
-                previous = current
-                current = current.next
-        if previous is None:
-            self.head = current.next
-        else:
-            previous.next = current.next
+                if previous:
+                    previous.next = current.next
+                else:
+                    self.head = current.next
+                return True
+
+            previous = current
+            current = current.next
+        return False
 
     def get_size(self):
         count = 0
@@ -52,25 +65,29 @@ class SinglyLinkedList(object):
 
     def show_list(self):
         current = self.head
-        while current is not None:
+        while current:
             print(current.value)
             current = current.next
+        print("\n")
 
 
 def main():
     list = SinglyLinkedList()
-    list.add_front(1)
-    list.add_front(2)
     list.add_front(3)
+    list.add_front(2)
+    list.add_front(1)
 
     list.show_list()
     list.get_size()
 
-    list.add(0, 3)
+    list.add(1, 1)
     list.show_list()
     list.get_size()
 
     list.delete(2)
+    list.show_list()
+
+    list.add_back(4)
     list.show_list()
 
 
