@@ -1,5 +1,5 @@
 def binary_search_recursive(array, target, min, max):
-    mid = min + (max - min) / 2
+    mid = min + (max - min) // 2
 
     if array[mid] == target:
         return mid
@@ -10,8 +10,9 @@ def binary_search_recursive(array, target, min, max):
 
 
 def main():
+    # TODO write case where target is not found
     array = [0, 22, 46, 67, 100]
-    target = 22
+    target =100
     key = binary_search_recursive(array, target, 0, len(array))
     print("Target %d is located at Index %d" % (target, key))
 
