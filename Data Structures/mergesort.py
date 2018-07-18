@@ -1,3 +1,4 @@
+# Top-down Implementation
 def mergeSort(array):
     if len(array) > 1:
         mid = len(array) // 2
