@@ -10,11 +10,9 @@ def seq_search(list, key):
 
     return found
 
-
 def main():
     list = [4, 5, 8, 2, 1, 4, 3]
     print(seq_search(list, 1))
-
 
 if __name__ == "__main__":
     main()

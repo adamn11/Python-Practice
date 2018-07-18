@@ -12,10 +12,8 @@ def list_practice():
     myList.remove(2)
     print(myList)
 
-
 def main():
     list_practice()
-
 
 if __name__ == '__main__':
     main()

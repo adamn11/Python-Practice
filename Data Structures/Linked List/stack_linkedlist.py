@@ -32,6 +32,5 @@ def main():
     stack.pop()
     stack.print_list()
 
-
 if __name__ == '__main__':
     main()
