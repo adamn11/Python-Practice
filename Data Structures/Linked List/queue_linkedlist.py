@@ -45,6 +45,5 @@ def main():
     list.dequeue()
     list.show()
 
-
 if __name__ == '__main__':
     main()

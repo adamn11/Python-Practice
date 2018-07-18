@@ -73,6 +73,5 @@ def main():
     list.delete(2)
     list.show_list()
 
-
 if __name__ == '__main__':
     main()

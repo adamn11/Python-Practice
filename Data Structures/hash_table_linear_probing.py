@@ -65,10 +65,8 @@ class Hash_Table(object):
                 if position == start:
                     stop = True
 
-
 def main():
     print("hello world")
-
 
 if __name__ == '__main__':
     main()
