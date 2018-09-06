@@ -1,3 +1,20 @@
+'''
+
+Insertion Sort: An in-place comparison-based sorting algorithm. Here, a 
+    sub-list is maintained which is always sorted. The array is searched
+    sequentially and unsorted items are moved and inserted into the sorted 
+    sub-list (in the same array). Not suitable for large data sets.
+
+
+Time Compmlexity (Best): O(n)
+Time Complexity (Average and Worst): O(n^2)
+Space Complexity: O(n)
+
+Implementation:
+Insertion Sort
+
+'''
+
 def insertion_sort(alist):
     for i in range(1, len(alist)):
         key = alist[i]
