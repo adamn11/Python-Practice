@@ -8,7 +8,7 @@ Insertion Sort: An in-place comparison-based sorting algorithm. Here, a
 
 Time Compmlexity (Best): O(n)
 Time Complexity (Average and Worst): O(n^2)
-Space Complexity: O(1s)
+Space Complexity: O(1)
 
 Implementation:
 Insertion Sort
