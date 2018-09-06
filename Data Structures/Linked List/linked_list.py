@@ -1,3 +1,26 @@
+'''
+
+Linked List: A linear data structure consists of nodes where each node contains a data field
+    and a reference to the next node in the list
+
+Time Complexity:
+    - Inserting at front: O(1)
+    - Inserting at back (no tail): O(n)
+    - Searching/Deleting: O(n)
+Space Complexity:
+
+Implementation:
+size
+insert
+delete (at given index)
+delete (with given value)
+reverse
+value_at
+
+'''
+
+
+
 class Node(object):
     def __init__(self, value):
         self.value = value
