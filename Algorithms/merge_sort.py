@@ -4,7 +4,8 @@ Merge Sort: Sort an array, divide it into two halves, sort the two halves (recur
     and then merge the results.
 
 Time Complexity:  O(n log n)
-Space Complexity: O(n)
+Space Complexity (Arrays): O(n)
+Space Complexity (Linked List): O(log n)
 
 Implementation:
 Top-Down
