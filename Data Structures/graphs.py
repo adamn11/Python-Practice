@@ -1,3 +1,5 @@
+# Undirected, Unweighted Graph
+
 class Graph:
     def __init__(self):
         self._graph = {}
