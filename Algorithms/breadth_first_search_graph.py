@@ -15,6 +15,7 @@ def bfs(graph, start):
             # Then go through all nodes connected and append to queue
             for neighbor in neighbors:
                 queue.append(neighbor)
+                
     return visited
 
 def main():

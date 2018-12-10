@@ -4,13 +4,13 @@ def dfs(graph, start):
 
     while stack:
         # Pop the top of the stack
-        popped = stack.pop()
+        node = stack.pop()
 
         # If the node has not been visited...
-        if popped not in visited:
+        if node not in visited:
             # Mark as visited then...
-            visited.append(popped)
-            neighbor = graph[popped]
+            visited.append(node)
+            neighbors = graph[node]
 
             # Then go through all nodes connected and append to stack
             for neighbor in neighbors:
