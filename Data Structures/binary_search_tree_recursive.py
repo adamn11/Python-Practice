@@ -1,8 +1,8 @@
 class Node:
-    def __init__(self, value):
+    def __init__(self, value, left=None, right=None):
         self.value = value
-        self.left = None
-        self.right = None
+        self.left = left
+        self.right = right
 
 
 class BinarySearchTree:
@@ -14,7 +14,7 @@ class BinarySearchTree:
             self.root = Node(value)
         else:
             self.add_helper(self.root, value)
-            
+
     def add_helper(self, start, value):
         if start.value < value:
             if start.right is None:
@@ -75,21 +75,50 @@ class BinarySearchTree:
                 current = current.right
         return False
 
+    def bfs(self):
+        queue = [self.root]
 
-t = BinarySearchTree()
-t.add(8)
-t.add(3)
-t.add(10)
-t.add(1)
-t.add(6)
-t.add(14)
-t.add(4)
-t.add(7)
-t.add(13)
-t.preorder()
-print()
-t.inorder()
-print()
-t.postorder()
+        while queue:
+            popped = queue.pop(0)
+            print(popped.value)
+            if popped.left:
+                queue.append(popped.left)
+            if popped.right:
+                queue.append(popped.right)
+
+    def dfs(self):
+        stack = [self.root]
+
+        while stack:
+            popped = stack.pop()
+            print(popped.value)
+            if popped.right:
+                stack.append(popped.right)
+            if popped.left:
+                stack.append(popped.left)
+
+    def is_symmetrical(self):
+        if self.root is None:
+            return False
+
+        return self.is_symmetrical_helper(self.root.left, self.root.right)
+
+    def is_symmetrical_helper(self, t1, t2):
+        if t1 is None and t2 is None:
+            return True
+        if t1 is None or t2 is None:
+            return False
+        return self.is_symmetrical_helper(t1.left, t2.right) and \
+               self.is_symmetrical_helper(t1.right, t2.left)
+
+
+first = BinarySearchTree()
+first.add(4)
+first.add(3)
+first.add(5)
+first.add(1)
+first.add(7)
+first.bfs()
+print(first.is_symmetrical())
 
 
