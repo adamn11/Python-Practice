@@ -10,7 +10,7 @@ class BinarySearchTree:
         self.root = None
 
     def add(self, value):
-        if self.root == None:
+        if self.root is None:
             self.root = Node(value)
         else:
             self.add_helper(self.root, value)
@@ -28,7 +28,7 @@ class BinarySearchTree:
                 self.add_helper(start.left, value)
 
     def inorder(self):
-        if self.root == None:
+        if self.root is None:
             return False
         else:
             self.inorder_helper(self.root)
@@ -40,7 +40,7 @@ class BinarySearchTree:
             self.inorder_helper(start.right)
 
     def preorder(self):
-        if self.root == None:
+        if self.root is None:
             return False
         else:
             self.preorder_helper(self.root)
@@ -52,7 +52,7 @@ class BinarySearchTree:
             self.preorder_helper(start.right)
 
     def postorder(self):
-        if self.root == None:
+        if self.root is None:
             return False
         else:
             self.postorder_helper(self.root)
