@@ -32,7 +32,7 @@ Implementation:
 # Min Heap
 class Heap:
     def __init__(self, heap=[]):
-        self.heap = heal
+        self.heap = heap
         self.size = 0
 
     def print_heap(self):
@@ -54,7 +54,7 @@ class Heap:
         self.heap[e1], self.heap[e2] = self.heap[e2], self.heap[e1]
 
     def heapify_up(self, index):
-        if <= 0:
+        if index <= 0:
             return
         parent = self.get_parent(index)
         if self.heap[parent] > self.heap[index]:
