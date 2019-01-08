@@ -50,6 +50,11 @@ class Heap:
     def get_parent(self, child):
         return (child-1) // 2
 
+    def add(self, value):
+        self.heap.append(value)
+        self.size += 1
+        self.heapify_up(self.get_size()-1)
+
     def swap(self, e1, e2):
         self.heap[e1], self.heap[e2] = self.heap[e2], self.heap[e1]
 
