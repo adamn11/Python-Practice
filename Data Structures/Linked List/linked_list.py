@@ -24,7 +24,6 @@ class SinglyLinkedList(object):
         node = Node(data)
         previous.next = node
 
-    # Catch if index[0]
     def add(self, data, index):
         current = self.head
         previous = None
