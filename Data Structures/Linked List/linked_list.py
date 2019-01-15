@@ -9,9 +9,9 @@ class SinglyLinkedList(object):
         self.head = None
 
     def add_front(self, data):
-        node = Node(data, None)  # Create new node instance storing a value
-        node.next = self.head  # Set new node's next to reference old head node
-        self.head = node  # Set variable head to reference the new node
+        node = Node(data, None)
+        node.next = self.head 
+        self.head = node 
 
     def add_back(self, data):
         current = self.head
