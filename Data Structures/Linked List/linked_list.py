@@ -9,7 +9,7 @@ class SinglyLinkedList(object):
         self.head = None
 
     def add_front(self, data):
-        node = Node(data, None)
+        node = Node(data)
         node.next = self.head 
         self.head = node 
 
